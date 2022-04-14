@@ -1,7 +1,10 @@
 package br.com.letscode.annotationsandreflections.domains;
 
 import br.com.letscode.annotationsandreflections.annotations.Default;
+import br.com.letscode.annotationsandreflections.annotations.DefaultData;
 import lombok.Data;
+
+import java.time.LocalDate;
 
 @Data
 public class Endereco {
@@ -11,4 +14,7 @@ public class Endereco {
     private String rua;
     @Default(value = "SN")
     private String numero;
+
+    @DefaultData(currentDate = false)
+    private LocalDate dataCadastro;
 }

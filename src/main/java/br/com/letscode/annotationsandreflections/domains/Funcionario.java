@@ -1,6 +1,7 @@
 package br.com.letscode.annotationsandreflections.domains;
 
 import br.com.letscode.annotationsandreflections.annotations.Default;
+import br.com.letscode.annotationsandreflections.annotations.DefaultData;
 import br.com.letscode.annotationsandreflections.annotations.Format;
 import lombok.Data;
 
@@ -16,6 +17,12 @@ public class Funcionario {
     @Format
     private LocalDate dataNascimento;
 
-    @Format(pattern = "MM-dd-yyyy")
+    @DefaultData
     private LocalDate dataInicioTrabalho;
+    @Format(pattern = "MM-dd-yyyy")
+    public LocalDate getDataInicioTrabalho() {
+        return dataInicioTrabalho;
+    }
+
+
 }
